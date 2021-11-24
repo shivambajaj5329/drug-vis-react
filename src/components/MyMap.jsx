@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import data from "../data/states.geo.json"
-import "leaflet/dist/leaflet.css"
+import data from "../data/datasss.json"
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet"
 import "../styles/MyMap.css"
+
 
 
 
@@ -15,9 +15,9 @@ class MyMap extends Component{
 
     countryStyle = {
         fillColor: "red",
-        color: "black"
+        color: "black",
+        fillOpacity: 0.3,
     };
-
 
     OnEachState = (state, layer) => {
         const stateName = state.properties.NAME
@@ -30,6 +30,8 @@ class MyMap extends Component{
         })
 
     }
+
+
 
     render(){
         return (
