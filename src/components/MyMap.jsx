@@ -1,7 +1,10 @@
 import React, {Component} from "react";
-import data from "../data/datasss.json"
-import { MapContainer, TileLayer, GeoJSON } from "react-leaflet"
+import data from "../data/data_scaled_correctly.json"
+import "leaflet/dist/leaflet.css"
+import { MapContainer , GeoJSON } from "react-leaflet"
 import "../styles/MyMap.css"
+
+
 
 
 
@@ -13,21 +16,25 @@ class MyMap extends Component{
         console.log(data)
     }
 
+    
+
     countryStyle = {
-        fillColor: "red",
+        fillColor: "blue",
         color: "black",
         fillOpacity: 0.3,
     };
 
     OnEachState = (state, layer) => {
         const stateName = state.properties.NAME
+        const stateWiseDrugData = state.properties.avg_nrm_data
         console.log(stateName);
-        layer.bindPopup(stateName)
+        layer.bindPopup(stateName + stateWiseDrugData)
         layer.on({
             click: (event) => {
                 console.log("click")
             }
         })
+        layer.options.fillOpacity = stateWiseDrugData
 
     }
 
