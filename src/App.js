@@ -1,6 +1,9 @@
 //import {MapContainer,TileLayer,Marker ,Popup } from "react-leaflet"
 import './App.css';
 import MyMap from "./components/MyMap.jsx";
+import BarChart from './components/BarChart'
+
+
 
 function App() {
   //const position = [51.505, -0.09]
@@ -19,7 +22,8 @@ function App() {
 
 
  // );
- return <MyMap />;
+  return <MyMap />;
+// return <BarChart data={data} />
 }
 
 export default App;
